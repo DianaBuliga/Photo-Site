@@ -74,6 +74,28 @@ app.get('/shop', (req, res)=>{
     res.render('shop');
 })
 
+var mysql = require('mysql');
+var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "password",
+    database: "cumparaturi",
+    port: 3307
+});
+
+
+app.get('/shopping', (req, res)=>{
+    con.connect(function(err) {
+        if (err) throw err;
+        console.log("Connected!");
+        var sql = "CREATE TABLE customers (name VARCHAR(255), cantitate int)";
+        con.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log("Table created");
+        });
+      });
+})
+
 app.listen(port, host, ()=> {
     console.log(`Server is running on http://${host}:${port}`);
 });

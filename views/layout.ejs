@@ -3,14 +3,14 @@
 <html>
     <head>       
         <link rel="stylesheet"  href="css/style.css" type="text/css">
-
+        <script type="text/javascript" src="/js/function.js"></script>
     </head>
     <main>
         <div class="header">
             <img src="pictures/pw_LOGO.png" height="140">
             <br><br>
-            <input type="text" placeholder="Search..">
-            <button type="button">Caută</button>
+            <input type="text" id="searchBar" onkeyup="search()" placeholder="Search..">
+            
             <a href="/login">Login</a>
             <a href='/bag'>Cumpărături</a>
             <br><br><br><br>
@@ -26,7 +26,7 @@
         <%- body %>
         <br> <br><br> <br><br>
         <div class="up">
-            <script type="text/javascript" src="/js/function.js"></script>
+            
             <button type="button" id="top" onclick="topFunction()"> UP </button>
         </div>
         <br><br>

@@ -136,8 +136,15 @@ main{
 }
 
 .camera img{
-  display: block;
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+li img{
+  display: block;
+}
+
+ul{
+  list-style-type:none;
 }
