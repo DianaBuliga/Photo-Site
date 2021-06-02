@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <html>
-    <head>
-        
+    <head>       
         <link rel="stylesheet"  href="css/style.css" type="text/css">
-   
+
     </head>
     <main>
         <div class="header">
-            <img src="pictures/pw_LOGO.png" height="147">
-            <h1>photoFree</h1>
+            <img src="pictures/pw_LOGO.png" height="140">
+            <br><br>
+            <input type="text" placeholder="Search..">
+            <button type="button">Caută</button>
+            <a href="/login">Login</a>
+            <a href='/bag'>Cumpărături</a>
+            <br><br><br><br>
         </div>
     
         <div class="navbar" >
+            
             <a href='/home'>Acasă</a>
-            <a href='/bag'>Cumpărături</a>
-            <a href='/contact'>Contact</a>
-            <a href="/login">Login</a>
+            <a href='/shop'>Magazin</a>
+            <a href='/contact'>Contact</a>           
         </div>
         
         <%- body %>
-    
+        <br> <br><br> <br><br>
+        <div class="up">
+            <script type="text/javascript" src="/js/function.js"></script>
+            <button type="button" id="top" onclick="topFunction()"> UP </button>
+        </div>
+        <br><br>
         <div id="footer"> <hr>
             <strong>Student:</strong> Buliga Diana-Marinela &nbsp;
             <strong>Grupa:</strong> 1306B<br>

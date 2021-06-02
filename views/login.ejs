@@ -1,11 +1,17 @@
-<h1>Autentificare</h1>
+<div class="headLogin">
+    <h1>Autentificare</h1>
+</div>
 
-<div clas="loginForm">
-    <form name="login">
-        <label for="user">User: </label>
-        <input type="text" id="fuser" name="user"><br>
+<div clas="loginForm" align="center">
+    <form class="login" action="verificare-login" method="post" >
+        <label for="fuser">User: </label>
+        <input type="text" id="fuser" name="fuser"><br>
         <label for="password">Password: </label>
-        <input type="password" id="password" name="password"><br>
+        <input type="password" id="fpassword" name="fpassword"><br>
         <input type="submit" value="Autentificare">
     </form>
 </div>
+
+<% if( user == 'mesajEroare') { %>
+    <p style='color:red; text-align:center' ><strong> username or password incorrect!</strong></p>
+<% } %>

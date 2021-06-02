@@ -1,28 +1,50 @@
 #footer {
-    position: fixed;
-    padding: 10px 10px 0px 10px;
+    padding: 10px 10px;
     bottom: 0;
     width: 100%;
-    height: 40px;
+    height: 55px;
+    background-color: #051f15;
+    color:#85b4a6;
 }
 
 body{
     background-color: #DCDCDC;
 }
 
+main{
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.header{
+  
+  background-color:#051f15 ;
+}
 .header img{
     float: left; 
 }
 
-.header h1{
-    float: inherit;
-    padding:30px;
-    text-align: center;
+.header button{
+  padding: 16px 10px;
+}
+
+.header input{
+  padding: 16px 15%;
+}
+
+.header a{
+  padding: 8px 16px;
+  float:right;
+  color: #cac489;
+  
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 17px;
+  text-align: center;
 }
 
 .navbar {
     width: 100%;
-    background-color: 	#C0C0C0;
+    background-color: 	#85b4a6;
     overflow: auto;
   }
   .navbar a {
@@ -40,14 +62,82 @@ body{
   .navbar a.active {
     background-color: #051f15;
   }
+  
+ .login{
+  box-sizing: border-box;
+  background-color: #85b4a6;
+  width: 50%;
+  height: 200px;;
+}
+
+.login input[type=text], [type=password]{
+  width: 30%;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+.login input[type=submit]{
+  background-color: #04AA6D;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.login input[type=submit]:hover {
+  background-color: #2fa17b;
+}
+
+.login label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
  
-  div.loginForm{
-    text-align:center;
-    display: block;
-  }
-  form{
-    display: inline-block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: left;
-  }
+.headLogin h1{
+  float: inherit;
+  padding:30px;
+  text-align: center;
+  color:#0c5e3e;
+}
+
+.selectType {
+  width: 100%;
+  background-color: 	#ccc36d;
+  overflow: auto;
+}
+
+.selectType a{
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 47.3%; 
+  text-align: center;
+}
+.selectType a:hover {
+  background-color: rgb(3, 92, 62);
+}
+
+.up button{
+  float:right;
+  width: 30%;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+.up button{
+  background-color: rgb(3, 92, 62);
+}
+
+.up button:hover {
+  background-color: #ccc36d;
+}
+
+.camera img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
