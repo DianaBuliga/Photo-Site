@@ -156,3 +156,45 @@ ul{
   margin-left: auto;
   margin-right: auto;
 }
+.plata{
+  box-sizing: border-box;
+  background-color: #85b4a6;
+  width: 50%;
+  height: 200px;;
+}
+
+.plata input[type=text], [type=password]{
+  width: 30%;
+  padding: 10px;
+  border: 1px solid;
+  border-radius: 3px;
+}
+
+.plata input[type=submit]{
+  background-color: #04AA6D;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.plata input[type=submit]:hover {
+  background-color: #2fa17b;
+}
+
+.plata label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+.submit{
+  background-color: #04AA6D;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.submit:hover{
+  background-color: #d0d324;
+}

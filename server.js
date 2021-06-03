@@ -10,7 +10,6 @@ const host = 'localhost';
 const port = 6971;
 
 const expressLayouts = require('express-ejs-layouts');
-//permite folosirea fisierelor ejs
 app.set('view engine', 'ejs');
 
 
@@ -19,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(expressLayouts);
 app.use(express.static('/public'));
+
 app.use('/css', express.static(__dirname+'/public/css'));
 app.use('/pictures', express.static(__dirname+'/public/pictures'));
 app.use('/js', express.static(__dirname+'/public/js'));
@@ -58,7 +58,7 @@ app.post('/verificare-login', (req, res)=>{
 
                 res.cookie("user", userList[i].username);
                 
-                res.redirect("/");
+                res.redirect("/home");
             }
         }
 
@@ -83,34 +83,15 @@ app.get('/shop', (req, res)=>{
     
 })
 
-app.post('/bag', (req, res)=>{
-    con.connect(function(err) {
-        if (err) throw err;
-        con.query("SELECT * FROM cumparaturi", function (err, result, fields) {
-          if (err) throw err;
-            res.send(fields);
-        });
-    });
-    res.redirect('bag');
-})
-
-var sql;
+/*let listaImagini;
 app.get('/shopping', (req, res)=>{
-    
-    con.connect(function(err) {
+    const fs = require('fs');
+    fs.readFile('magazin.json', (err, data) =>{
         if (err) throw err;
-        console.log("Connected!");
-
-        sql = "INSERT INTO cumparaturi (name, cantitate) VALUES ('aesthetic', 1)";
-        con.query(sql, function (err, result) {
-            if (err) throw err;
-            console.log("1 row inserted");
-            res.render('bag');
-        });
-
+        listaImagini = JSON.parse(data).listaImagini;
+        res.render('bag', {listaImagini: listaImagini});
     });
-
-})
+})*/
 
 app.listen(port, host, ()=> {
     console.log(`Server is running on http://${host}:${port}`);
