@@ -24,7 +24,7 @@ app.use('/pictures', express.static(__dirname+'/public/pictures'));
 app.use('/js', express.static(__dirname+'/public/js'));
 
 app.get('', (req, res) => {
-    res.render('home', {user: req.cookies.user});
+    res.render('login', {user: req.cookies.user});
 });
 
 app.get('/home', (req, res) => {
@@ -70,30 +70,46 @@ app.post('/verificare-login', (req, res)=>{
     })
 })
 
-app.get('/shop', (req, res)=>{
-    res.render('shop');
-})
-
 var mysql = require('mysql');
 var con = mysql.createConnection({
-    host: "localhost",
+   // host: "localhost",
     user: "root",
     password: "password",
-    database: "cumparaturi",
-    port: 3307
+    database: "cumparaturi"
 });
 
+app.get('/shop', (req, res)=>{
+    res.render('shop');
+    
+})
 
+app.post('/bag', (req, res)=>{
+    con.connect(function(err) {
+        if (err) throw err;
+        con.query("SELECT * FROM cumparaturi", function (err, result, fields) {
+          if (err) throw err;
+            res.send(fields);
+        });
+    });
+    res.redirect('bag');
+})
+
+var sql;
 app.get('/shopping', (req, res)=>{
+    
     con.connect(function(err) {
         if (err) throw err;
         console.log("Connected!");
-        var sql = "CREATE TABLE customers (name VARCHAR(255), cantitate int)";
+
+        sql = "INSERT INTO cumparaturi (name, cantitate) VALUES ('aesthetic', 1)";
         con.query(sql, function (err, result) {
-        if (err) throw err;
-        console.log("Table created");
+            if (err) throw err;
+            console.log("1 row inserted");
+            res.render('bag');
         });
-      });
+
+    });
+
 })
 
 app.listen(port, host, ()=> {
